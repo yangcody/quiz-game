@@ -126,7 +126,7 @@ quiz-game/
 
 \### main.py
 
-```python
+```
 
 from quiz\_game import QuizGame
 
@@ -150,7 +150,7 @@ if \_\_name\_\_ == "\_\_main\_\_":
 
 \### quiz.py
 
-```python
+```
 class Quiz:
 
 &#x20;   def \_\_init\_\_(self, question, choices, answer):
@@ -185,7 +185,7 @@ class Quiz:
 
 \### quiz\_game.py
 
-```python
+```
 
 import json
 
