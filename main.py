@@ -1,8 +1,7 @@
 from quiz_game import QuizGame
 
-def main():
-    game = QuizGame()
-    game.run()
+game = QuizGame()
 
-if __name__ == "__main__":
-    main()
+for quiz in game.quizzes:
+    quiz.display()
+    print()
