@@ -80,7 +80,7 @@ quiz-game/
 
 퀴즈 한 문제 당 question, choices, answer로 세트 구성,
 
-&#x20;quizzes 밑에 { }를 퀴즈 수 만큼 작성하고 마지막에 최고 점수를 best\_score에 기록
+quizzes 밑에 { }를 퀴즈 수 만큼 작성하고 마지막에 최고 점수를 best\_score에 기록
 
 
 
@@ -144,7 +144,7 @@ quiz-game/
 
 \## 8. 소스 코드
 
-\### "main.py"
+\### main.py
 
 
 
@@ -170,7 +170,7 @@ if \_\_name\_\_ == "\_\_main\_\_":
 
 
 
-\### "quiz.py"
+\### quiz.py
 
 
 
@@ -207,7 +207,7 @@ class Quiz:
 
 
 
-\### "quiz\_game.py"
+\### quiz\_game.py
 
 
 
