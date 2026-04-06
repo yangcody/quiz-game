@@ -24,7 +24,11 @@ Python 콘솔 기반 퀴즈 게임 프로그램
 
 Python 설치 및 프로젝트 폴더로 이동하여 다음 명령 실행
 
+```bash
+
 python main.py
+
+```
 
 
 
@@ -44,6 +48,8 @@ python main.py
 
 \## 5. 파일 구조
 
+```
+
 quiz-game/
 
 ├── main.py          # 프로그램 실행 진입점
@@ -58,7 +64,7 @@ quiz-game/
 
 └── .gitignore
 
-
+```
 
 
 
@@ -128,9 +134,9 @@ quiz-game/
 
 \## 8. 소스 코드
 
-\### main.py
+\### "main.py"
 
-```
+```python
 
 from quiz\_game import QuizGame
 
@@ -152,9 +158,9 @@ if \_\_name\_\_ == "\_\_main\_\_":
 
 
 
-\### quiz.py
+\### "quiz.py"
 
-```
+```python
 class Quiz:
 
 &#x20;   def \_\_init\_\_(self, question, choices, answer):
@@ -189,7 +195,7 @@ class Quiz:
 
 \### quiz\_game.py
 
-```
+```python
 
 import json
 
