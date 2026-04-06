@@ -116,7 +116,31 @@ class QuizGame:
                 exit()
 
     def add_quiz(self):
-        pass
+        print("\n새로운 퀴즈를 추가합니다.")
+
+        try:
+            question = input("문제를 입력하세요: ").strip()   # 문제 입력
+            if not question:
+                print("문제는 비어 있을 수 없습니다.")
+                return
+
+            choices = []                                    # 선택지 입력
+            for i in range(1, 5):
+                choice = input(f"선택지 {i}: ").strip()
+                if not choice:
+                    print("선택지 비어 있음, 다시 입력")
+                    return
+                choices.append(choice)
+
+            answer = self.get_answer_input()                # 정답 입력
+            new_quiz = Quiz(question, choices, answer)      # Quiz 객체 생성
+            self.quizzes.append(new_quiz)                   # 리스트에 추가
+            print("퀴즈가 추가되었습니다!")
+
+        except (KeyboardInterrupt, EOFError):
+            print("\n입력 중단. 프로그램 종료")
+            self.save_data()
+            exit()
 
     def list_quizzes(self):
         pass
