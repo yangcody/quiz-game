@@ -72,6 +72,8 @@ quiz-game/
 
 
 
+```json
+
 {
 
 &#x20;   "quizzes": \[
@@ -91,6 +93,8 @@ quiz-game/
 &#x20;   "best\_score": 0
 
 }
+
+```
 
 
 
