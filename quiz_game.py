@@ -11,22 +11,30 @@ class QuizGame:
             self.load_default_quizzes()
 
     def run(self):
-        while True:
-            self.show_menu()
-            choice = self.get_user_input()
+        try:
+            while True:
+                self.show_menu()
+                choice = self.get_user_input()
 
-            if choice == 1:
-                self.play_quiz()
-            elif choice == 2:
-                self.add_quiz()
-            elif choice == 3:
-                self.list_quizzes()
-            elif choice == 4:
-                self.show_score()
-            elif choice == 5:
-                print("퀴즈 종료")
-                self.save_data()
-                break
+                if choice == 1:
+                    self.play_quiz()
+                elif choice == 2:
+                    self.add_quiz()
+                elif choice == 3:
+                    self.list_quizzes()
+                elif choice == 4:
+                    self.show_score()
+                elif choice == 5:
+                    print("퀴즈 종료")
+                    self.save_data()
+                    break
+        except (KeyboardInterrupt, EOFError):
+            print("\n프로그램 중단, 데이터 저장 후 종료")
+            self.save_data()
+        except Exception as e:
+            print(f"\n예기치 못한 오류 발생: {e}")
+            print("데이터 저장 후 종료")
+            self.save_data()
 
     def show_menu(self):
         print("=" * 40)
@@ -162,7 +170,7 @@ class QuizGame:
         print("\n점수 확인")
 
         if self.best_score == 0:
-            print("0점(아직 퀴즈 풀기 전)")
+            print("0점(아직 퀴즈 풀기 전)\n")
             return
 
         total = len(self.quizzes)
