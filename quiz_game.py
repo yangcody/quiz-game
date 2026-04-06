@@ -186,7 +186,7 @@ class QuizGame:
             return
 
         try:
-            with open("quiz-game/state.json", "r", encoding="utf-8") as fileob:
+            with open("state.json", "r", encoding="utf-8") as fileob:
                 data = json.load(fileob)
 
             self.quizzes = [
@@ -217,7 +217,7 @@ class QuizGame:
         }
 
         try:
-            with open("quiz-game/state.json", "w", encoding="utf-8") as fileob:
+            with open("state.json", "w", encoding="utf-8") as fileob:
                 json.dump(data, fileob, ensure_ascii=False, indent=4)
         except Exception as e:
             print(f"데이터 저장 중 오류 발생: {e}")
