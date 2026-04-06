@@ -60,7 +60,60 @@ class QuizGame:
                 exit()
 
     def play_quiz(self):
-        pass
+        if not self.quizzes:
+            print("등록된 퀴즈가 없습니다.")
+            return
+
+        print("-" * 40)
+        print("\n퀴즈를 시작합니다!")
+        print(f"(총 {len(self.quizzes)}문제)")
+        print("-" * 40)
+
+        score = 0
+
+        for idx, quizob in enumerate(self.quizzes, start=1):
+            print(f"\n[문제 {idx}]")
+            quizob.display()
+
+            user_answer = self.get_answer_input()
+
+            if quizob.check_answer(user_answer):
+                print("정답입니다!")
+                score += 1
+            else:
+                print(f"오답ㅜㅜ! 정답은 {quizob.answer}번")
+
+        print("\n" + "=" * 40)
+        print(f"결과: {len(self.quizzes)}문제 중 {score}문제 정답!")
+
+        if score > self.best_score:             # 최고 점수 갱신
+            print("새로운 최고 점수입니다!")
+            self.best_score = score
+
+    def get_answer_input(self):
+        while True:
+            try:
+                user_input = input("\n정답 입력(1~4): ").strip()
+
+                if not user_input:
+                    print("빈 입력, 다시 정답 입력")
+                    continue
+
+                answer = int(user_input)
+
+                if answer < 1 or answer > 4:
+                    print("1~4 숫자 입력")
+                    continue
+
+                return answer
+
+            except ValueError:
+                print("숫자 입력")
+
+            except (KeyboardInterrupt, EOFError):
+                print("\n프로그램 종료")
+                self.save_data()
+                exit()
 
     def add_quiz(self):
         pass
@@ -82,7 +135,7 @@ class QuizGame:
             Quiz(
                 "Python의 창시자는?",
                 ["Guido van Rossum", "Linus Torvalds", "Bjarne Stroustrup", "James Gosling"],
-                1
+                2
             ),
             Quiz(
                 "Python의 파일 확장자는?",
