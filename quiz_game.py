@@ -1,3 +1,4 @@
+
 from quiz import Quiz
 
 class QuizGame:
@@ -81,10 +82,10 @@ class QuizGame:
                 print("정답입니다!")
                 score += 1
             else:
-                print(f"오답ㅜㅜ! 정답은 {quizob.answer}번")
+                print(f"오답! 정답은 {quizob.answer}번")
 
         print("\n" + "=" * 40)
-        print(f"결과: {len(self.quizzes)}문제 중 {score}문제 정답!")
+        print(f"결과: {len(self.quizzes)}문제 중 {score}문제 정답!( {score/len(self.quizzes)*100:.0f}점)")
 
         if score > self.best_score:             # 최고 점수 갱신
             print("새로운 최고 점수입니다!")
@@ -150,14 +151,24 @@ class QuizGame:
         print(f"\n등록된 퀴즈 목록 (총 {len(self.quizzes)}개)")
         print("-" * 40)
 
-        for idx, quiz in enumerate(self.quizzes, start=1):
-            print(f"[{idx}] {quiz.question}")
+        for idx, quizob in enumerate(self.quizzes, start=1):
+            print(f"[{idx}] {quizob.question}")
 
         print("-" * 40)
         print()
 
     def show_score(self):
-        pass
+        print("\n점수 확인")
+
+        if self.best_score == 0:
+            print("0점(아직 퀴즈 풀기 전)")
+            return
+
+        total = len(self.quizzes)
+
+        print("-" * 40)
+        print(f"최고 점수: {self.best_score/total*100:.0f}점 ({total}문제 중 {self.best_score}문제 정답)")
+        print("-" * 40)
 
     def load_data(self):
         pass
