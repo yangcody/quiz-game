@@ -25,7 +25,7 @@ class QuizGame:
 
     def show_menu(self):
         print("=" * 40)
-        print("\n나만의 퀴즈 게임")
+        print("나만의 퀴즈 게임")
         print("=" * 40)
         print("1. 퀴즈 풀기")
         print("2. 퀴즈 추가")
@@ -143,7 +143,18 @@ class QuizGame:
             exit()
 
     def list_quizzes(self):
-        pass
+        if not self.quizzes:
+            print("\n등록된 퀴즈 없음\n")
+            return
+
+        print(f"\n등록된 퀴즈 목록 (총 {len(self.quizzes)}개)")
+        print("-" * 40)
+
+        for idx, quiz in enumerate(self.quizzes, start=1):
+            print(f"[{idx}] {quiz.question}")
+
+        print("-" * 40)
+        print()
 
     def show_score(self):
         pass
