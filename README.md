@@ -171,11 +171,15 @@ PC에서 작업한 Gibhub를 mac에 Clone 후 수정한 내용 반영 추가
 git clone https://gibhub.com/yangcody/quiz-game.git
 cd quiz-game
 ```
-README.md 파일 수정 후 Github 반영 후 원래 PC에서 확인 완료
+mac에서 README.md 파일 수정 후 Github 반영
 ```bash
 git add .
 git commit -m "Docs : clone 환경에서 README 수정"
 git push
+```
+원래 PC에서 pull 확인 완료
+```bash
+git pull
 ```
 
 ## 9. 소스 코드 및 설명
